@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ollama-server
+    env: docker
+    plan: free
+    healthCheckPath: /
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: OLLAMA_MODEL
+        value: phi3
